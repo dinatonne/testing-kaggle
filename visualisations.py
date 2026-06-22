@@ -16,4 +16,9 @@ plt.show()
 
 df.groupby('country')['weight_kg'].mean().plot(kind=bar)
 plt.title('Average Weight (kg) by Country')
-plot.show()
+plt.show()
+
+df['medical_condition'].value_counts().plot(kind=bar)
+plt.title('The Most Common Medical Conditions')
+plt.xsticks(rotation=45) # Rotates labels on x axis 45 degrees so they are readable vertically 
+plt.show() 
