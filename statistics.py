@@ -27,4 +27,6 @@ print(df.loc[df.groupby('continent')['height_cm'].idmax()][['name', 'continent',
 print('n\Shortest person per continent:')
 print(df.loc[df.groupby('continent')['height_cm'].idmin()][['name', 'continent', 'height_cm']])
 
-
+# Heaviest person per continent
+print('\nHeaviest person per continent:')
+print(df.loc[df.groupby('continent')['weight_kg'].idmax()][['name', 'continent', 'weight_kg']])
