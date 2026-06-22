@@ -16,3 +16,7 @@ std_height = df['height_cm'].std()
 outliers = df[df['heigh_cm'] > mean_height + 2 * std_height] # Formel 
 print('n\Height outlier:')
 print(outliers[['name', 'country', 'height_cm']])
+
+print('n\Mean vs Median height by continent:')
+print(df.groupby('continent')['height_cm'].agg(['mean', 'median']))
+
