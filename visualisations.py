@@ -30,7 +30,7 @@ plt.suptitle('')
 plt.xticks(rotation=45)
 plt.show()
 
-df.groupby('birth_year')['height_cm']mean.plot(kind=line)
+df.groupby('birth_year')['height_cm'].mean.plot(kind=line)
 plt.title('Average Height Over Time')
 plt.xlabel('Birth year')
 plt.ylabel('Height (cm)')
