@@ -55,6 +55,6 @@ print(df['medical_condition'].value_counts())
 
 # Correlation between height, lifespan and weight
 print('                                         ')
-print('Correlation Between Height, Lifespan and Weight')
+print('Does Height Affect Lifespan?')
 print('-----------------------------------------')
 print(df[["height_cm", "lifespan", "weight_kg"]].corr())
