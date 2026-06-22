@@ -6,7 +6,7 @@ df['height_cm'].hist()
 plt.title('Height Distribution')
 plt.show()
 
-df.groupby('continent')['lifespan'].mean().plot(kind=bar)
+df.groupby('continent')['lifespan'].mean().plot(kind='bar')
 plt.title('Average Lifespan by Continent')
 plt.show()
 
