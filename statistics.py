@@ -20,3 +20,11 @@ print(outliers[['name', 'country', 'height_cm']])
 print('n\Mean vs Median height by continent:')
 print(df.groupby('continent')['height_cm'].agg(['mean', 'median']))
 
+# Tallest and shortest person by continent
+print('n\Tallest person per continent:')
+print(df.loc[df.groupby('continent')['height_cm'].idmax()][['name', 'continent', 'height_cm']])
+
+print('n\Shortest person per continent:')
+print(df.loc[df.groupby('continent')['height_cm'].idmin()][['name', 'continent', 'height_cm']])
+
+
