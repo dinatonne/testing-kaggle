@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-df.read_csv('tallest_people_in_the_world.csv')
+df = pd.read_csv('tallest_people_in_the_world.csv')
 
 df['height_cm'].hist()
 plt.title('Height Distribution')
