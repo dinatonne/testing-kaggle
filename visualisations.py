@@ -15,6 +15,7 @@ df.plot.scatter(x='height_cm', y='lifespan')
 plt.title('Height vs. Lifespan')
 z = np.polyfit(df['height_cm'].dropna(), df['lifespan'].dropna(), 1) # Dropna removes missing/empty values from column
 p = np.poly1d(z)
+plt.plot(sorted(df['height_cm'].dropna()), p(sorted(df['height_cm'].dropna())), 'r--')
 plt.show()
 
 df.groupby('country')['weight_kg'].mean().plot(kind='bar')
