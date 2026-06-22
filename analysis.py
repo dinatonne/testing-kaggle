@@ -55,6 +55,14 @@ print(df['medical_condition'].value_counts())
 
 # Correlation between height, lifespan and weight
 print('                                         ')
-print('Does Height Affect Lifespan?')
+print('     Does Height Affect Lifespan?')
 print('-----------------------------------------')
 print(df[["height_cm", "lifespan", "weight_kg"]].corr())
+
+# Oldest person per continent
+print('                                         ')
+print('      Oldest Person per Continent        ')
+print('-----------------------------------------')
+oldest_per_continent = df.groupby("continent").apply(lambda x: x.loc[x["lifespan"].idxmax(), ["name", "lifespan"]])
+print("\nOldest person per continent:")
+print(oldest_per_continent)
