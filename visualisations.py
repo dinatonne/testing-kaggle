@@ -13,3 +13,7 @@ plt.show()
 df.plot.scatter(x='height_cm', y='lifespan')
 plt.title('Height vs. Lifespan')
 plt.show()
+
+df.groupby('country')['weight_kg'].mean().plot(kind=bar)
+plt.title('Average Weight (kg) by Country')
+plot.show()
