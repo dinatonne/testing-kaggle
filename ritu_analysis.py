@@ -27,3 +27,11 @@ outliers = df[(df['FSC.H'] > mean_fsc + 3 * std_fsc) |
 print(f"Total cells: {len(df)}")
 print(f"Outlier cells: {len(outliers)}")
 print(f"Outlier percentage: {(len(outliers)/len(df)*100).round(2)}%")
+
+# Comparing gate populations 
+for gate in sorted(df['Gate'].unique()):
+    subset = df[df['Gate'] == gate]
+    print(f"\nGate {gate} ({len(subset)} cells):")
+    print(f"  Mean FSC: {subset['FSC.H'].mean().round(1)}")
+    print(f"  Mean SSC: {subset['SSC.H'].mean().round(1)}")
+    print(f"  Mean FL1: {subset['FL1.H'].mean().round(1)}")
