@@ -35,3 +35,10 @@ for gate in sorted(df['Gate'].unique()):
     print(f"  Mean FSC: {subset['FSC.H'].mean().round(1)}")
     print(f"  Mean SSC: {subset['SSC.H'].mean().round(1)}")
     print(f"  Mean FL1: {subset['FL1.H'].mean().round(1)}")
+
+# Coefficient of variation 
+# CV measures how consistent measurements are. In flow cyt, a high CV means high variability in that channel - lower better for technical quality. 
+channels = ['FSC.H', 'SSC.H', 'FL1.H', 'FL2.H', 'FL3.H']
+cv = (df[channels].std() / df[channels].mean() * 100).round(2)
+print("Coefficient of Variation (%) per channel:")
+print(cv)
