@@ -16,3 +16,14 @@ print("Cells per gate:")
 print(gate_counts)
 print("\nPercentage per gate:")
 print(gate_pct)
+
+# Flagging outlier cells 
+mean_fsc = df['FSC.H'].mean()
+std_fsc = df['FSC.H'].std()
+
+outliers = df[(df['FSC.H'] > mean_fsc + 3 * std_fsc) | 
+              (df['FSC.H'] < mean_fsc - 3 * std_fsc)]
+
+print(f"Total cells: {len(df)}")
+print(f"Outlier cells: {len(outliers)}")
+print(f"Outlier percentage: {(len(outliers)/len(df)*100).round(2)}%")
