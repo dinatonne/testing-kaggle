@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('/Users/hilde/Desktop/CytoFit/testing_kaggle/rituximab.csv')
+df = pd.read_csv('/Users/hilde/Desktop/CytoFit/testing_kaggle/flow_cytometry/rituximab.csv')
 
 # Basic data quality check
 print("Dataset shape:", df.shape)
@@ -26,7 +26,7 @@ outliers = df[(df['FSC.H'] > mean_fsc + 3 * std_fsc) |
 
 print(f"Total cells: {len(df)}")
 print(f"Outlier cells: {len(outliers)}")
-print(f"Outlier percentage: {(len(outliers)/len(df)*100).round(2)}%")
+print(f"Outlier percentage: {(len(outliers)/len(df)*100)}%")
 
 # Comparing gate populations 
 for gate in sorted(df['Gate'].unique()):
@@ -39,6 +39,6 @@ for gate in sorted(df['Gate'].unique()):
 # Coefficient of variation 
 # CV measures how consistent measurements are. In flow cyt, a high CV means high variability in that channel - lower better for technical quality. 
 channels = ['FSC.H', 'SSC.H', 'FL1.H', 'FL2.H', 'FL3.H']
-cv = (df[channels].std() / df[channels].mean() * 100).round(2)
+cv = (df[channels].std() / df[channels].mean() * 100)
 print("Coefficient of Variation (%) per channel:")
 print(cv)
